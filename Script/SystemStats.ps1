@@ -13,41 +13,13 @@ $SystemInfo -split "`n" | ForEach-Object {
         $SystemHash[$Key] = $Value
     }
 }
-
+# Tableise Results in PS
 $ResultsHash["Host Name"] = $SystemHash["Host Name"]
 $ResultsHash["OS Name"] = $SystemHash["OS Name"]
-# $ResultsHash["OS Version"] = $SystemHash["OS Version"]
-# $ResultsHash["OS Manufacturer"] = $SystemHash["OS Manufacturer"]
-# $ResultsHash["OS Configuration"] = $SystemHash["OS Configuration"]
-# $ResultsHash["OS Build Type"] = $SystemHash["OS Build Type"]
-# $ResultsHash["Registered Owner"] = $SystemHash["Registered Owner"]
-# $ResultsHash["Registered Organization"] = $SystemHash["Registered Organization"]
-# $ResultsHash["Product ID"] = $SystemHash["Product ID"]
-# $ResultsHash["Original Install Date"] = $SystemHash["Original Install Date"]
-# $ResultsHash["System Boot Time"] = $SystemHash["System Boot Time"]
 $ResultsHash["System Manufacturer"] = $SystemHash["System Manufacturer"]
 $ResultsHash["System Model"] = $SystemHash["System Model"]
-# $ResultsHash["System Type"] = $SystemHash["System Type"]
-# $ResultsHash["Processor(s)"] = $SystemHash["Processor(s)"]
 $ResultsHash["BIOS Version"] = $SystemHash["BIOS Version"]
-# $ResultsHash["Windows Directory"] = $SystemHash["Windows Directory"]
-# $ResultsHash["System Directory"] = $SystemHash["System Directory"]
-# $ResultsHash["Boot Device"] = $SystemHash["Boot Device"]
-# $ResultsHash["System Locale"] = $SystemHash["System Locale"]
-# $ResultsHash["Input Locale"] = $SystemHash["Input Locale"]
-# $ResultsHash["Time Zone"] = $SystemHash["Time Zone"]
 $ResultsHash["Total Physical Memory"] = $SystemHash["Total Physical Memory"]
-# $ResultsHash["Available Physical Memory"] = $SystemHash["Available Physical Memory"]
-# $ResultsHash["Virtual Memory: Max Size"] = $SystemHash["Virtual Memory: Max Size"]
-# $ResultsHash["Virtual Memory: Available"] = $SystemHash["Virtual Memory: Available"]
-# $ResultsHash["Virtual Memory: In Use"] = $SystemHash["Virtual Memory: In Use"]
-# $ResultsHash["Page File Location(s)"] = $SystemHash["Page File Location(s)"]
-# $ResultsHash["Domain"] = $SystemHash["Domain"]
-# $ResultsHash["Logon Server"] = $SystemHash["Logon Server"]
-# $ResultsHash["Hotfix(s)"] = $SystemHash["Hotfix(s)"]
-# $ResultsHash["Network Card(s)"] = $SystemHash["Network Card(s)"]
-# $ResultsHash["Virtualization-based security"] = $SystemHash["Virtualization-based security"]
-# $ResultsHash["Hyper-V Requirements"] = $SystemHash["Hyper-V Requirements"]
 
 # Retrieve the Windows Product Key
 $ProductKey = (Get-WmiObject -query 'select * from SoftwareLicensingService').OA3xOriginalProductKey
